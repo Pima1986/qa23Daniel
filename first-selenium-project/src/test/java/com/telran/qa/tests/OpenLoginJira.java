@@ -1,5 +1,6 @@
 package com.telran.qa.tests;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -23,29 +24,45 @@ public class OpenLoginJira {
 
     @Test
     public void testLogin() throws InterruptedException {
-        // wd.get("http://jira.tel-ran.net/");
+        type(By.name("os_username"), "Daniel");
+        type(By.name("os_password"), "chjfhhjkjb");
 
-//        click(By.name("aui-nav-link login-link"));
-//        click(By.id("login-form-username"));
-        wd.findElement(By.name("os_username")).click();
-        wd.findElement(By.name("os_username")).clear();
-        wd.findElement(By.name("os_username")).sendKeys("Daniel");
+        //type2(By.name("os_password"), "chjfhhjkjb");
 
-        wd.findElement(By.name("os_password")).click();
-        wd.findElement(By.name("os_password")).clear();
-        wd.findElement(By.name("os_password")).sendKeys("chjfhhjkjb");
-
-        wd.findElement(By.id("login")).click();
+        click(By.id("login"));
 
         Thread.sleep(40000);
+        
+        Assert.assertTrue(isElementPresent(By.id("usernameerror")));
+        String errorMessage = wd.findElement(By.id("usernameerror")).getText();
+
+        Assert.assertEquals(errorMessage, "Sorry, your username and password are incorrect - please try again.");
     }
+
+//    private void type2(By locator, String text) {
+//        click(locator);
+//        wd.findElement(locator).clear();
+//        wd.findElement(locator).sendKeys(text);
+//    }
+
+    private void type(By locator, String text) {
+        click(locator);
+        wd.findElement(locator).clear();
+        wd.findElement(locator).sendKeys(text);
+    }
+
 
     private void click(By locator) {
         wd.findElement(locator).click();
     }
 
+
+    public boolean isElementPresent(By locator) {
+        return wd.findElements(locator).size() > 0;
+    }
+
     @AfterClass
     public void tearDown() {
-        wd.quit();
+        // wd.quit();
     }
 }
