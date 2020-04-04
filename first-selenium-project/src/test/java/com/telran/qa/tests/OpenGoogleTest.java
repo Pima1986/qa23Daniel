@@ -9,29 +9,30 @@ import org.testng.annotations.*;
 import java.util.concurrent.TimeUnit;
 
 public class OpenGoogleTest {
-WebDriver wd;
+    WebDriver wd;
 
-@BeforeClass
-public void setUp(){
-wd = new ChromeDriver();
-    wd.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-    wd.get("https://www.google.com/");
-}
-@Test
-public void testOpenGoogle(){
+    @BeforeClass
+    public void setUp() {
+        wd = new ChromeDriver();
+        wd.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        wd.get("https://www.google.com/");
+    }
 
-    click(By.className("gb_D"));
-    click(By.className("gb_D"));
-}
+    @Test
+    public void testOpenGoogle() {
+
+        click(By.className("gb_D"));
+        click(By.className("gb_D"));
+    }
 
     private void click(By locator) {
         wd.findElement(locator).click();
     }
 
     @AfterClass
-public void tearDown(){
- wd.quit();
-}
+    public void tearDown() {
+        wd.quit();
+    }
 
     @Test
     public void testSearchGoogle() throws InterruptedException {
@@ -41,10 +42,11 @@ public void tearDown(){
         wd.findElement(By.name("q")).sendKeys("Java");
         Thread.sleep(3000);
     }
-@Test
+
+    @Test
     public void testOpenProfile() throws InterruptedException {
-    click(By.id("gb_70"));
-    Thread.sleep(3000);
+        click(By.id("gb_70"));
+        Thread.sleep(3000);
     }
 
 
