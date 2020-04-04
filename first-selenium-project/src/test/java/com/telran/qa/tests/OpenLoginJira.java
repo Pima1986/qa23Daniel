@@ -32,7 +32,7 @@ public class OpenLoginJira {
         click(By.id("login"));
 
         Thread.sleep(40000);
-        
+
         Assert.assertTrue(isElementPresent(By.id("usernameerror")));
         String errorMessage = wd.findElement(By.id("usernameerror")).getText();
 
