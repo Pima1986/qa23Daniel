@@ -39,7 +39,10 @@ public class BoardCreationTests {
         //3. confirmLogin
         confirmLogin();
 
-        //4. init board creation
+        //4. initBoardCreation
+        public void addBoard(){
+            click(By.name("add"));
+        }
         //5. fill board form
         //6. confirm board creation
         //7. return to home page
@@ -75,5 +78,5 @@ public class BoardCreationTests {
         wd.quit();
     }
 
-    
+
 }
