@@ -63,6 +63,6 @@ public class OpenLoginJira {
 
     @AfterClass
     public void tearDown() {
-        // wd.quit();
+         wd.quit();
     }
 }
