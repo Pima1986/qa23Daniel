@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
+import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 
 public class BoardCreationTests {
@@ -19,10 +20,11 @@ public class BoardCreationTests {
     @BeforeMethod
     public void setUp() {
         wd = new ChromeDriver();
-        wd.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        wait = new WebDriverWait(wd, 17);
+        wd.manage().timeouts().implicitlyWait(15, SECONDS);
+        wait = new WebDriverWait(wd, 20);
         wd.manage().window().maximize();
         wd.navigate().to("https://trello.com/");
+
 
     }
 
@@ -72,7 +74,7 @@ public class BoardCreationTests {
 
     private void fillLoginFormAtlassian(String userEmail, String password) {
         type(By.name("user"), userEmail);
-        click(By.cssSelector("#login.button-green"));
+        click(By.cssSelector("[value='Log in with Atlassian']"));
         type(By.id("password"), password);
     }
 
