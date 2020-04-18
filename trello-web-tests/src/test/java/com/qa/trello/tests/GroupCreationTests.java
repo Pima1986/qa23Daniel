@@ -62,7 +62,7 @@ public class GroupCreationTests {
     private void fillGroupForm() {
         int random = (int)(Math.random() * 50 + 1);
         wait.until(presenceOfElementLocated(By.
-                id("1587198175624-create-team-org-display-name"))).
+                cssSelector("[data-test-id='header-create-team-name-input']"))).
                 sendKeys("New QA group"+random);
     }
 
@@ -74,7 +74,6 @@ public class GroupCreationTests {
     private void fillLoginFormAtlassian(String userEmail, String password) {
         type(By.name("user"), userEmail);
         click(By.cssSelector("#login.button-green"));
-       // wait.withTimeout(5, TimeUnit.SECONDS);
         type(By.id("password"), password);
     }
 
