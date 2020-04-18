@@ -3,13 +3,10 @@ package com.qa.trello.tests;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import java.util.concurrent.TimeUnit;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
@@ -18,6 +15,7 @@ public class BoardCreationTests {
     WebDriver wd;
     WebDriverWait wait;
 
+
     @BeforeMethod
     public void setUp() {
         wd = new ChromeDriver();
@@ -25,10 +23,12 @@ public class BoardCreationTests {
         wait = new WebDriverWait(wd, 17);
         wd.manage().window().maximize();
         wd.navigate().to("https://trello.com/");
+
     }
 
     @Test
     public void testBoardCreation() {
+
 
         //1. initLogin
         initLogin();
@@ -40,12 +40,29 @@ public class BoardCreationTests {
         confirmLogin();
 
         //4. initBoardCreation
-        public void addBoard(){
-            click(By.name("add"));
-        }
+        initBoardCreation();
+
         //5. fill board form
+        fillBoardForm();
+
         //6. confirm board creation
+        click(By.cssSelector("[data-test-id='create-board-submit-button']"));
         //7. return to home page
+        click(By.name("house"));
+
+    }
+
+    private void initBoardCreation() {
+        click(By.cssSelector("[name='add']"));
+        wait.until(presenceOfElementLocated(By.
+                xpath("//div[@class='atlaskit-portal-container']//li[1]//button[1]"))).click();
+    }
+
+    private void fillBoardForm() {
+        int random = (int)(Math.random() * 50 + 1);
+        wait.until(presenceOfElementLocated(By.
+                cssSelector("[data-test-id='create-board-title-input']"))).
+                sendKeys("New Board from Home"+random);
     }
 
     private void confirmLogin() {
@@ -73,10 +90,10 @@ public class BoardCreationTests {
         wait.until(ExpectedConditions.presenceOfElementLocated(locator)).click();
     }
 
-    @AfterMethod
+   /* @AfterMethod
     public void tearDown() {
         wd.quit();
-    }
+    }*/
 
 
 }
