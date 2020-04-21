@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.pagefactory.ByAll;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -29,7 +30,7 @@ public class GroupCreationTests {
         wd.navigate().to("https://trello.com/");
 
     }
-
+//Privet s raboti trydaga!!!
     @Test
     public void testGroupCreation() {
 
@@ -102,10 +103,10 @@ public class GroupCreationTests {
         wait.until(ExpectedConditions.presenceOfElementLocated(locator)).click();
     }
 
-   /* @AfterMethod
+    @AfterMethod
     public void tearDown() {
         wd.quit();
-    }*/
+    }
 
 
 }

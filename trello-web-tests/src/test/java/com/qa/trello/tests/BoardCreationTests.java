@@ -5,8 +5,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
 import java.util.concurrent.TimeUnit;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
@@ -61,10 +63,10 @@ public class BoardCreationTests {
     }
 
     private void fillBoardForm() {
-        int random = (int)(Math.random() * 50 + 1);
+        int random = (int) (Math.random() * 50 + 1);
         wait.until(presenceOfElementLocated(By.
                 cssSelector("[data-test-id='create-board-title-input']"))).
-                sendKeys("New Board from Home"+random);
+                sendKeys("New Board from Home" + random);
     }
 
     private void confirmLogin() {
@@ -92,10 +94,10 @@ public class BoardCreationTests {
         wait.until(ExpectedConditions.presenceOfElementLocated(locator)).click();
     }
 
-   /* @AfterMethod
+    @AfterMethod
     public void tearDown() {
         wd.quit();
-    }*/
+    }
 
 
 }
