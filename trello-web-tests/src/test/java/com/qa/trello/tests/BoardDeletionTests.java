@@ -1,12 +1,24 @@
 package com.qa.trello.tests;
 
 import org.openqa.selenium.By;
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import static org.testng.Assert.assertEquals;
 
 public class BoardDeletionTests extends TestBase {
 
+    @BeforeMethod
+    public void ensurePreconditions() throws InterruptedException {
+        if (getBoardsCount() == 0) {
+            createBoard();
+        }
+    }
+
     @Test
-    public void TestDeletion(){
+    public void TestDeletion() {
+        int before = getBoardsCount();
         openFirstPersonalBoard();
         clickMoreButton();
         initBoardDeletionInMeu();
@@ -14,35 +26,10 @@ public class BoardDeletionTests extends TestBase {
         permanentlyDeleteBoard();
         confirmDeleteBoard();
         returnHomePage();
+        int after = getBoardsCount();
+        System.out.println("was: " + before + "  now: " + after);
+        assertEquals(after, before-1);
     }
 
-    public void returnHomePage() {
-        click(By.name("house"));
-    }
 
-    public void confirmDeleteBoard() {
-        click(By.cssSelector(".js-confirm"));
-    }
-
-    public void permanentlyDeleteBoard() {
-        click(By.cssSelector(".js-delete"));
-    }
-
-    public void confirmCloseBoard() {
-        click(By.cssSelector(".js-confirm"));
-    }
-
-    public void initBoardDeletionInMeu() {
-        click(By.cssSelector(".js-close-board"));
-    }
-
-    public void clickMoreButton() {
-        click(By.cssSelector(".js-open-more"));
-
-    }
-
-    public void openFirstPersonalBoard() {
-        click(By.xpath("//*[@class='boards-page-board-section-list']/../..//li"));
-
-    }
 }

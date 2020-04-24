@@ -19,7 +19,7 @@ public class TestBase {
 
 
     @BeforeMethod
-    public void setUp() {
+    public void setUp() throws InterruptedException {
         wd = new ChromeDriver();
         wd.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         wait = new WebDriverWait(wd, 20);
@@ -56,9 +56,10 @@ public class TestBase {
         click(By.id("login-submit"));
     }
 
-    public void fillLoginFormAtlassian(String userEmail, String password) {
+    public void fillLoginFormAtlassian(String userEmail, String password) throws InterruptedException {
         type(By.name("user"), userEmail);
         click(By.cssSelector("[value='Log in with Atlassian']"));
+        Thread.sleep(5000);
         type(By.id("password"), password);
     }
 
@@ -77,7 +78,8 @@ public class TestBase {
     }
 
     @AfterMethod
-    public void tearDown() {
+    public void tearDown() throws InterruptedException {
+        Thread.sleep(10000);
         wd.quit();
     }
 
@@ -92,11 +94,57 @@ public class TestBase {
         wait.until(presenceOfElementLocated(By.
                 cssSelector("[data-test-id='create-board-title-input']"))).
                 sendKeys("New Board from Home" + random);
+        click(By.cssSelector(".W6rMLOx8U0MrPx"));
+        click(By.xpath("//li[1]/button[@class = '_2jR0BZMM5cBReR']"));
+
+
     }
 
-    public void login(String email, String password) {
+    public void login(String email, String password) throws InterruptedException {
         initLogin();
         fillLoginFormAtlassian(email, password);
         confirmLogin();
+    }
+
+    public void returnHomePage() {
+        click(By.name("house"));
+    }
+
+    public void confirmDeleteBoard() {
+        click(By.cssSelector(".js-confirm"));
+    }
+
+    public void permanentlyDeleteBoard() {
+        click(By.cssSelector(".js-delete"));
+    }
+
+    public void confirmCloseBoard() {
+        click(By.cssSelector(".js-confirm"));
+    }
+
+    public void initBoardDeletionInMeu() {
+        click(By.cssSelector(".js-close-board"));
+    }
+
+    public void clickMoreButton() {
+        click(By.cssSelector(".js-open-more"));
+
+    }
+
+    public void openFirstPersonalBoard() {
+        click(By.xpath("//*[@class='icon-lg icon-member']/../../..//li"));
+
+    }
+
+      public int getBoardsCount() {
+        return wd.findElements(By.
+                xpath("//*[@class='boards-page-board-section-list']/../..//li")).size() - 1;
+    }
+    public void createBoard() throws InterruptedException {
+        initBoardCreation();
+        fillBoardForm();
+        Thread.sleep(3000);
+        click(By.cssSelector("[data-test-id='create-board-submit-button']"));
+        returnHomePage();
     }
 }
