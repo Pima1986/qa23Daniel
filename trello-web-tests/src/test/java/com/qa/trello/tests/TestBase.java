@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
@@ -45,7 +46,7 @@ public class TestBase {
         click(By.xpath("//div[@id='react-select-2-option-3']//li[@class='_38pq5NbRWAG39y']"));
         wait.until(presenceOfElementLocated(By.cssSelector("._15aIJYNKhrO4vB"))).
                 sendKeys("Generate random String of given size in Java" +
-                "Given a size as n, The task is to generate a random alphanumeric String of this size.");
+                        "Given a size as n, The task is to generate a random alphanumeric String of this size.");
         click(By.cssSelector("[data-test-id='header-create-team-submit-button']"));
 
 
@@ -77,11 +78,11 @@ public class TestBase {
         wait.until(ExpectedConditions.presenceOfElementLocated(locator)).click();
     }
 
-    @AfterMethod
+  /*  @AfterMethod
     public void tearDown() throws InterruptedException {
         Thread.sleep(2000);
         wd.quit();
-    }
+    }*/
 
     public void initBoardCreation() {
         click(By.cssSelector("[name='add']"));
@@ -136,10 +137,11 @@ public class TestBase {
 
     }
 
-      public int getBoardsCount() {
+    public int getBoardsCount() {
         return wd.findElements(By.
                 xpath("//*[@class='boards-page-board-section-list']/../..//li")).size() - 1;
     }
+
     public void createBoard() throws InterruptedException {
         initBoardCreation();
         fillBoardForm();
@@ -148,4 +150,37 @@ public class TestBase {
         returnHomePage();
     }
 
+
+    public void createByTemplate() {
+        click(By.cssSelector("[class='icon-sm icon-template-card dark-background-hover']"));
+        wait.until(presenceOfElementLocated(By.cssSelector(".css-t5emrf"))).click();
+
+
+    }
+
+    protected void addCard() {
+        click(By.cssSelector(".js-save-edit"));
+    }
+
+    public void fillNameOfList() {
+        int random = (int) (Math.random() * 100 + 1);
+        type(By.cssSelector("[name='name']"),
+                "New adding to list " + random);
+    }
+
+    public void initAddList() {
+        click(By.xpath("//a[@class='open-add-list js-open-add-list']"));
+
+    }
+
+    public void openRandomPersonalBoard() {
+        click(By.xpath("//*[@class='icon-lg icon-member']/../../..//li"));
+    }
+
+    public void typeTemplates() {
+        Random rand = new Random();
+        wait.until(presenceOfElementLocated(By.cssSelector("._3amdh54KEULv4z"))).
+                sendKeys("Tempaltes " + rand);
+
+    }
 }
