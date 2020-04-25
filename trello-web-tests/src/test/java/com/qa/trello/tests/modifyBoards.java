@@ -12,23 +12,19 @@ public class modifyBoards extends TestBase {
 
 
     @Test
-    public void modifyTests() {
+    public void modifyTests() throws InterruptedException {
         openRandomPersonalBoard();
         initAddList();
         fillNameOfList();
         addCard();
-        //editCardIt();
         createByTemplate();
         typeTemplates();
-        //returnHomePage();
+        addTemplate();
+        tempalteForCards();
+        returnHomePage();
 
 
     }
-
-    /* public void editCardIt() {
-        click(By.cssSelector("[class='icon-sm icon-template-card dark-background-hover']"));
-
-    }*/
 
 
 }

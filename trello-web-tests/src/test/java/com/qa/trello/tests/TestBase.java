@@ -107,7 +107,8 @@ public class TestBase {
         confirmLogin();
     }
 
-    public void returnHomePage() {
+    public void returnHomePage() throws InterruptedException {
+        Thread.sleep(10000);
         click(By.name("house"));
     }
 
@@ -162,7 +163,8 @@ public class TestBase {
         click(By.cssSelector(".js-save-edit"));
     }
 
-    public void fillNameOfList() {
+    public void fillNameOfList() throws InterruptedException {
+        Thread.sleep(2000);
         int random = (int) (Math.random() * 100 + 1);
         type(By.cssSelector("[name='name']"),
                 "New adding to list " + random);
@@ -173,14 +175,28 @@ public class TestBase {
 
     }
 
-    public void openRandomPersonalBoard() {
+    public void openRandomPersonalBoard() throws InterruptedException {
+        Thread.sleep(1500);
         click(By.xpath("//*[@class='icon-lg icon-member']/../../..//li"));
     }
 
     public void typeTemplates() {
         Random rand = new Random();
-        wait.until(presenceOfElementLocated(By.cssSelector("._3amdh54KEULv4z"))).
+        wait.until(presenceOfElementLocated(By.cssSelector("._3730WlziYhHDQa"))).
                 sendKeys("Tempaltes " + rand);
 
+
+
+    }
+
+    public void addTemplate() {
+        click(By.cssSelector(".css-j8fq0c"));
+    }
+
+    public void tempalteForCards() {
+        wait.until(presenceOfElementLocated(By.cssSelector(".js-new-comment-input"))).
+                sendKeys("Some special comment for this action");
+        click(By.cssSelector(".js-add-comment"));
+        click(By.cssSelector(".js-close-window"));
     }
 }
