@@ -79,7 +79,7 @@ public class TestBase {
 
     @AfterMethod
     public void tearDown() throws InterruptedException {
-        Thread.sleep(10000);
+        Thread.sleep(2000);
         wd.quit();
     }
 
@@ -90,7 +90,7 @@ public class TestBase {
     }
 
     public void fillBoardForm() {
-        int random = (int) (Math.random() * 50 + 1);
+        int random = (int) (Math.random() * 100 + 1);
         wait.until(presenceOfElementLocated(By.
                 cssSelector("[data-test-id='create-board-title-input']"))).
                 sendKeys("New Board from Home" + random);
@@ -147,4 +147,5 @@ public class TestBase {
         click(By.cssSelector("[data-test-id='create-board-submit-button']"));
         returnHomePage();
     }
+
 }

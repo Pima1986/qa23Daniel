@@ -11,15 +11,18 @@ public class BoardCreationTests extends TestBase {
 
     @Test
     public void testBoardCreation() throws InterruptedException {
+        Thread.sleep(3000);
         int before = getBoardsCount();
         initBoardCreation();
         fillBoardForm();
-        Thread.sleep(3000);
         click(By.cssSelector("[data-test-id='create-board-submit-button']"));
         returnHomePage();
         int after = getBoardsCount();
         System.out.println("was: " + before + "  now: " + after);
-        //assertEquals(before+1, after);
+
+        //it's not work, assert is not see how many boards were before,
+        //but haw many boards after - it's correct form
+        //assertEquals(before + 1, after);
 
 
     }
