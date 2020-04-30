@@ -1,80 +1,16 @@
-package com.qa.trello.tests;
+package com.qa.trello.tests.framework;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 
-public class ApplicationManager {
+public class BoardHelper extends HelperBase{
 
-    WebDriver wd;
-    WebDriverWait wait;
-
-    protected void init() throws InterruptedException {
-        wd = new ChromeDriver();
-        wd.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        wait = new WebDriverWait(wd, 20);
-        wd.manage().window().maximize();
-        wd.navigate().to("https://trello.com/");
-        login("daniel.pimshteyn@gmail.com", "Qwerty12345");
-    }
-
-    public void initGroupCreation() {
-        click(By.cssSelector("[name='add']"));
-        wait.until(presenceOfElementLocated(By.
-                xpath("//li[2]//button[1]//p[1]"))).click();
-    }
-
-    public void fillGroupForm() {
-        int random = (int) (Math.random() * 50 + 1);
-        wait.until(presenceOfElementLocated(By.
-                cssSelector("[data-test-id='header-create-team-name-input']"))).
-                sendKeys("New QA group" + random);
-        click(By.cssSelector(".css-3gw83x"));
-        click(By.xpath("//div[@id='react-select-2-option-3']//li[@class='_38pq5NbRWAG39y']"));
-        wait.until(presenceOfElementLocated(By.cssSelector("._15aIJYNKhrO4vB"))).
-                sendKeys("Generate random String of given size in Java" +
-                        "Given a size as n, The task is to generate a random alphanumeric String of this size.");
-        click(By.cssSelector("[data-test-id='header-create-team-submit-button']"));
-
-
-    }
-
-    public void confirmLogin() {
-        //wait.until(presenceOfElementLocated(By.id("login-submit"))).click();
-        click(By.id("login-submit"));
-    }
-
-    public void fillLoginFormAtlassian(String userEmail, String password) throws InterruptedException {
-        type(By.name("user"), userEmail);
-        click(By.cssSelector("[value='Log in with Atlassian']"));
-        Thread.sleep(1000);
-        type(By.id("password"), password);
-    }
-
-    public void initLogin() {
-        click(By.cssSelector("[href='/login']"));
-    }
-
-    public void type(By locator, String text) {
-        click(locator);
-        wd.findElement(locator).clear();
-        wd.findElement(locator).sendKeys(text);
-    }
-
-    public void click(By locator) {
-        wait.until(ExpectedConditions.presenceOfElementLocated(locator)).click();
-    }
-
-    protected void stop() throws InterruptedException {
-        Thread.sleep(2000);
-        wd.quit();
+    public BoardHelper(WebDriver wd) {
+        super(wd);
     }
 
     public void initBoardCreation() {
@@ -92,16 +28,6 @@ public class ApplicationManager {
         click(By.xpath("//li[1]/button[@class = '_2jR0BZMM5cBReR']"));
 
 
-    }
-
-    public void login(String email, String password) throws InterruptedException {
-        initLogin();
-        fillLoginFormAtlassian(email, password);
-        confirmLogin();
-    }
-
-    public void returnHomePage() throws InterruptedException {
-        click(By.name("house"));
     }
 
     public void confirmDeleteBoard() {
@@ -150,7 +76,7 @@ public class ApplicationManager {
 
     }
 
-    protected void addCard() {
+    public void addCard() {
         click(By.cssSelector(".js-save-edit"));
     }
 
@@ -172,7 +98,6 @@ public class ApplicationManager {
                 xpath("//*[@class='icon-lg icon-member']/../../..//li"))).click();
     }
 
-
     public void typeTemplates() {
         Random rand = new Random();
         wait.until(presenceOfElementLocated(By.cssSelector("._3730WlziYhHDQa"))).
@@ -190,16 +115,6 @@ public class ApplicationManager {
                 sendKeys("Some special comment for this action");
         click(By.cssSelector(".js-add-comment"));
         click(By.cssSelector(".js-close-window"));
-    }
-
-    public void inviteGroupLater() {
-        if (isElementPresent(By.cssSelector("[data-test-id=show-later-button]"))) {
-            click(By.cssSelector("[data-test-id=show-later-button]"));
-        }
-    }
-
-    public boolean isElementPresent(By locator) {
-        return wd.findElements(locator).size() > 0;
     }
 
     protected boolean isOnBoardsPage() {
