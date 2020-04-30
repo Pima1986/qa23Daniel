@@ -54,7 +54,7 @@ public class ApplicationManager {
     public void fillLoginFormAtlassian(String userEmail, String password) throws InterruptedException {
         type(By.name("user"), userEmail);
         click(By.cssSelector("[value='Log in with Atlassian']"));
-        Thread.sleep(5000);
+        Thread.sleep(1000);
         type(By.id("password"), password);
     }
 
@@ -101,7 +101,6 @@ public class ApplicationManager {
     }
 
     public void returnHomePage() throws InterruptedException {
-        Thread.sleep(10000);
         click(By.name("house"));
     }
 
@@ -168,9 +167,11 @@ public class ApplicationManager {
     }
 
     public void openRandomPersonalBoard() throws InterruptedException {
-        Thread.sleep(3000);
-        click(By.xpath("//*[@class='icon-lg icon-member']/../../..//li"));
+
+        wait.until(presenceOfElementLocated(By.
+                xpath("//*[@class='icon-lg icon-member']/../../..//li"))).click();
     }
+
 
     public void typeTemplates() {
         Random rand = new Random();
