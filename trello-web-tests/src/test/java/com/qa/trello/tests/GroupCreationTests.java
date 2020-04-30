@@ -11,9 +11,12 @@ public class GroupCreationTests extends TestBase {
         initGroupCreation();
         fillGroupForm();
         click(By.cssSelector("[data-test-id='header-create-team-submit-button']"));
+        inviteGroupLater();
         //click(By.name("house"));
 
     }
+
+
 
 
 }

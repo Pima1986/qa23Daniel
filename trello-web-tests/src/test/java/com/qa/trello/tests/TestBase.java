@@ -21,14 +21,18 @@ public class TestBase {
 
     @BeforeMethod
     public void setUp() throws InterruptedException {
+        init();
+
+
+    }
+
+    private void init() throws InterruptedException {
         wd = new ChromeDriver();
         wd.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         wait = new WebDriverWait(wd, 20);
         wd.manage().window().maximize();
         wd.navigate().to("https://trello.com/");
         login("daniel.pimshteyn@gmail.com", "Qwerty12345");
-
-
     }
 
     public void initGroupCreation() {
@@ -80,6 +84,10 @@ public class TestBase {
 
     @AfterMethod
     public void tearDown() throws InterruptedException {
+        stop();
+    }
+
+    private void stop() throws InterruptedException {
         Thread.sleep(2000);
         wd.quit();
     }
@@ -186,7 +194,6 @@ public class TestBase {
                 sendKeys("Tempaltes " + rand);
 
 
-
     }
 
     public void addTemplate() {
@@ -198,5 +205,20 @@ public class TestBase {
                 sendKeys("Some special comment for this action");
         click(By.cssSelector(".js-add-comment"));
         click(By.cssSelector(".js-close-window"));
+    }
+
+    public void inviteGroupLater() {
+        if (isElementPresent(By.cssSelector("[data-test-id=show-later-button]"))) {
+            click(By.cssSelector("[data-test-id=show-later-button]"));
+        }
+    }
+
+    public  boolean isElementPresent(By locator){
+        return wd.findElements(locator).size()>0;
+    }
+
+    protected boolean isOnBoardsPage() {
+        String url = wd.getCurrentUrl();
+        return url.contains("boards");
     }
 }
