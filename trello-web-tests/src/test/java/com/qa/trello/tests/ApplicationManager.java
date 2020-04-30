@@ -198,8 +198,8 @@ public class ApplicationManager {
         }
     }
 
-    public  boolean isElementPresent(By locator){
-        return wd.findElements(locator).size()>0;
+    public boolean isElementPresent(By locator) {
+        return wd.findElements(locator).size() > 0;
     }
 
     protected boolean isOnBoardsPage() {
