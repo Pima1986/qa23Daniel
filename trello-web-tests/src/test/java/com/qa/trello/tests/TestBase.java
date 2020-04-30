@@ -78,11 +78,11 @@ public class TestBase {
         wait.until(ExpectedConditions.presenceOfElementLocated(locator)).click();
     }
 
-  /*  @AfterMethod
+    @AfterMethod
     public void tearDown() throws InterruptedException {
         Thread.sleep(2000);
         wd.quit();
-    }*/
+    }
 
     public void initBoardCreation() {
         click(By.cssSelector("[name='add']"));
@@ -176,7 +176,7 @@ public class TestBase {
     }
 
     public void openRandomPersonalBoard() throws InterruptedException {
-        Thread.sleep(1500);
+        Thread.sleep(3000);
         click(By.xpath("//*[@class='icon-lg icon-member']/../../..//li"));
     }
 
