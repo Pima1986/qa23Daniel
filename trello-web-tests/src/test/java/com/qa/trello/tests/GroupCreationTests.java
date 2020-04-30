@@ -8,10 +8,10 @@ public class GroupCreationTests extends TestBase {
     @Test
     public void testGroupCreation() {
 
-        initGroupCreation();
-        fillGroupForm();
-        click(By.cssSelector("[data-test-id='header-create-team-submit-button']"));
-        inviteGroupLater();
+        app.initGroupCreation();
+        app.fillGroupForm();
+        app.click(By.cssSelector("[data-test-id='header-create-team-submit-button']"));
+        app.inviteGroupLater();
         //click(By.name("house"));
 
     }
