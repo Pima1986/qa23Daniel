@@ -94,7 +94,7 @@ public class BoardHelper extends HelperBase {
     }
 
     public void openRandomPersonalBoard() throws InterruptedException {
-        Thread.sleep(2000);
+        //Thread.sleep(2000);
         waitForElementAndClick(By.
                 xpath("//*[@class='icon-lg icon-member']/../../..//li"));
     }
