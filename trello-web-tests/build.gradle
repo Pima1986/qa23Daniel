@@ -10,10 +10,19 @@ repositories {
 }
 
 dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
     implementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
     implementation 'org.testng:testng:7.1.0'
 }
 
 test {
     useTestNG()
+}
+test{
+    useTestNG{
+        suites 'src/test/resources/testing.xml'
+    }
+    if(project.hasProperty('browser')){
+        systemProperty 'browser', "${browser}"
+    }
 }
