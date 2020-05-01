@@ -2,12 +2,13 @@ package com.qa.trello.tests.framework;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.Random;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 
-public class BoardHelper extends HelperBase{
+public class BoardHelper extends HelperBase {
 
     public BoardHelper(WebDriver wd) {
         super(wd);
@@ -15,13 +16,13 @@ public class BoardHelper extends HelperBase{
 
     public void initBoardCreation() {
         click(By.cssSelector("[name='add']"));
-        wait.until(presenceOfElementLocated(By.
-                xpath("//div[@class='atlaskit-portal-container']//li[1]//button[1]"))).click();
+        waitForElementAndClick(By.xpath("//div[@class='atlaskit-portal-container']//li[1]//button[1]"));
+
     }
 
     public void fillBoardForm() {
         int random = (int) (Math.random() * 100 + 1);
-        wait.until(presenceOfElementLocated(By.
+        new WebDriverWait(wd, 20).until(presenceOfElementLocated(By.
                 cssSelector("[data-test-id='create-board-title-input']"))).
                 sendKeys("New Board from Home" + random);
         click(By.cssSelector(".W6rMLOx8U0MrPx"));
@@ -71,7 +72,7 @@ public class BoardHelper extends HelperBase{
 
     public void createByTemplate() {
         click(By.cssSelector("[class='icon-sm icon-template-card dark-background-hover']"));
-        wait.until(presenceOfElementLocated(By.cssSelector(".css-t5emrf"))).click();
+        waitForElementAndClick(By.cssSelector(".css-t5emrf"));
 
 
     }
@@ -93,15 +94,15 @@ public class BoardHelper extends HelperBase{
     }
 
     public void openRandomPersonalBoard() throws InterruptedException {
-
-        wait.until(presenceOfElementLocated(By.
-                xpath("//*[@class='icon-lg icon-member']/../../..//li"))).click();
+        Thread.sleep(2000);
+        waitForElementAndClick(By.
+                xpath("//*[@class='icon-lg icon-member']/../../..//li"));
     }
 
     public void typeTemplates() {
         Random rand = new Random();
-        wait.until(presenceOfElementLocated(By.cssSelector("._3730WlziYhHDQa"))).
-                sendKeys("Tempaltes " + rand);
+        new WebDriverWait(wd, 20).until(presenceOfElementLocated(By.cssSelector("._3730WlziYhHDQa"))).
+                sendKeys("Templates " + rand);
 
 
     }
@@ -110,14 +111,14 @@ public class BoardHelper extends HelperBase{
         click(By.cssSelector(".css-j8fq0c"));
     }
 
-    public void tempalteForCards() {
-        wait.until(presenceOfElementLocated(By.cssSelector(".js-new-comment-input"))).
+    public void templateForCards() {
+        new WebDriverWait(wd, 20).until(presenceOfElementLocated(By.cssSelector(".js-new-comment-input"))).
                 sendKeys("Some special comment for this action");
         click(By.cssSelector(".js-add-comment"));
         click(By.cssSelector(".js-close-window"));
     }
 
-    protected boolean isOnBoardsPage() {
+    public boolean isOnBoardsPage() {
         String url = wd.getCurrentUrl();
         return url.contains("boards");
     }

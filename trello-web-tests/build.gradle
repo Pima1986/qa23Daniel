@@ -18,11 +18,3 @@ dependencies {
 test {
     useTestNG()
 }
-test{
-    useTestNG{
-        suites 'src/test/resources/testing.xml'
-    }
-    if(project.hasProperty('browser')){
-        systemProperty 'browser', "${browser}"
-    }
-}

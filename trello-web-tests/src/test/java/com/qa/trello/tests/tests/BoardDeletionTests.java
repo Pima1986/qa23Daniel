@@ -1,12 +1,14 @@
 package com.qa.trello.tests.tests;
 
+import org.openqa.selenium.By;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
 public class BoardDeletionTests extends TestBase {
 
-  /*  @BeforeMethod
+    @BeforeMethod
     public void ensurePreconditions() throws InterruptedException {
        Thread.sleep(2000);
         if (app.getBoard().isOnBoardsPage()) {
@@ -15,12 +17,12 @@ public class BoardDeletionTests extends TestBase {
         if (app.getBoard().getBoardsCount() == 0) {
             app.getBoard().createBoard();
         }
-    }*/
+    }
 
     @Test
     public void TestDeletion() throws InterruptedException {
         Thread.sleep(2000);
-       /* int before = app.getBoardsCount();*/
+       /* int before = app.getBoard().getBoardsCount();*/
         app.getBoard().openFirstPersonalBoard();
         app.getBoard().clickMoreButton();
         app.getBoard().initBoardDeletionInMeu();

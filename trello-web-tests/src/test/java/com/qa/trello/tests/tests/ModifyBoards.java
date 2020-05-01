@@ -1,9 +1,11 @@
 package com.qa.trello.tests.tests;
 
+import org.openqa.selenium.By;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class ModifyBoards extends TestBase {
- /*   @BeforeMethod
+    @BeforeMethod
     public void ensurePreconditions() throws InterruptedException {
         if (app.getBoard().isOnBoardsPage()) {
             app.getBoard().click(By.cssSelector("[href$=boards]"));
@@ -11,7 +13,7 @@ public class ModifyBoards extends TestBase {
         if (app.getBoard().getBoardsCount() == 0) {
             app.getBoard().createBoard();
         }
-    }*/
+    }
 
 
     @Test
@@ -24,7 +26,7 @@ public class ModifyBoards extends TestBase {
         app.getBoard().createByTemplate();
         app.getBoard().typeTemplates();
         app.getBoard().addTemplate();
-        app.getBoard().tempalteForCards();
+        app.getBoard().templateForCards();
         app.getBoard().returnHomePage();
 
 

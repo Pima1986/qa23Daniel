@@ -5,9 +5,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
+
 public class HelperBase {
     WebDriver wd;
-    WebDriverWait wait;
+
 
     public HelperBase(WebDriver wd) {
         this.wd = wd;
@@ -19,8 +21,12 @@ public class HelperBase {
         wd.findElement(locator).sendKeys(text);
     }
 
+    public void waitForElementAndClick(By locator){
+        new WebDriverWait(wd, 20).until(ExpectedConditions.presenceOfElementLocated(locator)).click();
+    }
     public void click(By locator) {
-        wait.until(ExpectedConditions.presenceOfElementLocated(locator)).click();
+        wd.findElement(locator).click();
+
     }
 
     public void returnHomePage() throws InterruptedException {
@@ -29,5 +35,11 @@ public class HelperBase {
 
     public boolean isElementPresent(By locator) {
         return wd.findElements(locator).size() > 0;
+    }
+
+    public void waitForElementAndType(By locator, String text ){
+        new WebDriverWait(wd,20).until(presenceOfElementLocated(locator)).
+                sendKeys(text);
+
     }
 }
