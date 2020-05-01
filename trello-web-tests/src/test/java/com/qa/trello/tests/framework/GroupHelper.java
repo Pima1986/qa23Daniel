@@ -56,8 +56,11 @@ public class GroupHelper extends HelperBase {
 
     public void reNameGroup() {
         int random = (int) (Math.random() * 100 + 1);
+        wd.findElement(By.xpath("//input[@id='displayName']")).click();
+        wd.findElement(By.xpath("//input[@id='displayName']")).clear();
+       /* waitForElementAndType(By.xpath("//input[@id='displayName'"),"New name from home " + random);
+        waitForElementAndType(By.xpath("//textarea[@id='desc']"),"New Description for this field from home " + random);*/
         type(By.xpath("//input[@id='displayName']"), "New name from home " + random);
-        //type(By.xpath("//input[@id='name']"), "AAA");
         type(By.xpath("//textarea[@id='desc']"), "New Description for this field from home " + random);
         click(By.cssSelector("[type='submit']"));
 
