@@ -71,4 +71,8 @@ public class GroupHelper extends HelperBase {
         wd.findElement(By.cssSelector(".js-confirm")).click();
 
     }
+
+    public void returnToBoardsPageUrl(String username) {
+        wd.navigate().to("https://trello.com/"+username+"/boards");
+    }
 }

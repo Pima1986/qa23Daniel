@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.qa.trello.tests.tests.GroupCreationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-05-02T10:07:26" hostname="Daniel" time="17.662">
+  <properties/>
+  <testcase name="testGroupCreation" classname="com.qa.trello.tests.tests.GroupCreationTests" time="17.662"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

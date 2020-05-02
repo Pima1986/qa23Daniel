@@ -10,6 +10,7 @@ public class GroupModificationsTests extends TestBase {
         app.getGroup().openSettings();
         app.getGroup().changeProfileOfGroup();
         app.getGroup().reNameGroup();
-        app.getGroup().returnHomePage();
+        app.getGroup().returnToBoardsPageUrl("danielpimshteyn");
+
     }
 }

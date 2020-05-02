@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.qa.trello.tests.tests.BoardCreationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-05-02T10:06:33" hostname="Daniel" time="38.375">
+  <properties/>
+  <testcase name="testBoardCreation" classname="com.qa.trello.tests.tests.BoardCreationTests" time="38.375"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[[1588413996.292][SEVERE]: Timed out receiving message from renderer: 0.100
+[1588413996.395][SEVERE]: Timed out receiving message from renderer: 0.100
+[1588413996.503][SEVERE]: Timed out receiving message from renderer: 0.100
+[1588413996.768][SEVERE]: Timed out receiving message from renderer: 0.100
+]]></system-err>
+</testsuite>
