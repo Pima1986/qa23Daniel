@@ -25,7 +25,9 @@ public class HelperBase {
         new WebDriverWait(wd, 20).until(ExpectedConditions.presenceOfElementLocated(locator)).click();
     }
     public void click(By locator) {
-        wd.findElement(locator).click();
+        new WebDriverWait(wd, 20).until(ExpectedConditions.presenceOfElementLocated(locator)).click();
+        //no need line 30, can be deleted
+        /*wd.findElement(locator).click();*/
 
     }
 
