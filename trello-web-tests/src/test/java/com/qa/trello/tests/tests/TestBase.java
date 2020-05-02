@@ -16,10 +16,10 @@ public class TestBase {
 
     }
 
-  /*  @AfterSuite
+    @AfterSuite
     public void tearDown() throws InterruptedException {
         app.stop();
-    }*/
+    }
 
 
 }
