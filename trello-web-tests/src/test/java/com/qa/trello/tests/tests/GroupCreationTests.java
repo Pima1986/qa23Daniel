@@ -7,7 +7,7 @@ public class GroupCreationTests extends TestBase {
 
     @Test
     public void testGroupCreation() throws InterruptedException {
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         app.getGroup().initGroupCreation();
         app.getGroup().fillGroupForm();
         app.getGroup().click(By.cssSelector("[data-test-id='header-create-team-submit-button']"));

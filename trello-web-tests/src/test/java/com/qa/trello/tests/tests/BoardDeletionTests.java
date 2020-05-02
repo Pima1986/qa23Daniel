@@ -21,7 +21,7 @@ public class BoardDeletionTests extends TestBase {
 
     @Test
     public void TestDeletion() throws InterruptedException {
-        Thread.sleep(2000);
+        Thread.sleep(3000);
        /* int before = app.getBoard().getBoardsCount();*/
         app.getBoard().openFirstPersonalBoard();
         app.getBoard().clickMoreButton();

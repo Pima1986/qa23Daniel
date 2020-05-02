@@ -65,4 +65,10 @@ public class GroupHelper extends HelperBase {
         click(By.cssSelector("[type='submit']"));
 
     }
+
+    public void deleteGroup() {
+        wd.findElement(By.cssSelector(".quiet-button")).click();
+        wd.findElement(By.cssSelector(".js-confirm")).click();
+
+    }
 }

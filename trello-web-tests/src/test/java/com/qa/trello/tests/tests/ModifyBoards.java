@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 public class ModifyBoards extends TestBase {
     @BeforeMethod
     public void ensurePreconditions() throws InterruptedException {
+        Thread.sleep(5000);
         if (app.getBoard().isOnBoardsPage()) {
             app.getBoard().click(By.cssSelector("[href$=boards]"));
         }
@@ -18,7 +19,7 @@ public class ModifyBoards extends TestBase {
 
     @Test
     public void ModifyTests() throws InterruptedException {
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         app.getBoard().openRandomPersonalBoard();
         app.getBoard().initAddList();
         app.getBoard().fillNameOfList();
