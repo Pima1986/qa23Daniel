@@ -19,7 +19,7 @@ public class GroupDeletion extends TestBase{
 
     @Test
     public void groupDeletion() throws InterruptedException {
-        Thread.sleep(10000);
+
         app.getGroup().openFirstGroup();
         app.getGroup().openSettings();
         app.getGroup().deleteGroup();

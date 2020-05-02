@@ -10,7 +10,8 @@ public class SessionHelper extends HelperBase{
         super(wd);
     }
 
-    public void initLogin() {
+    public void initLogin()
+    {
         click(By.cssSelector("[href='/login']"));
     }
     public void confirmLogin() {

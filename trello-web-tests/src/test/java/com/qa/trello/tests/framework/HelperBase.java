@@ -11,6 +11,7 @@ public class HelperBase {
     WebDriver wd;
 
 
+
     public HelperBase(WebDriver wd) {
         this.wd = wd;
     }
@@ -31,8 +32,8 @@ public class HelperBase {
 
     }
 
-    public void returnHomePage() throws InterruptedException {
-        click(By.name("house"));
+    public void returnHomePage() {
+        wd.navigate().to("https://trello.com/danielpimshteyn/boards");
     }
 
     public boolean isElementPresent(By locator) {

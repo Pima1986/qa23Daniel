@@ -5,7 +5,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class ModifyBoards extends TestBase {
-  /*  @BeforeMethod
+    @BeforeMethod
     public void ensurePreconditions() throws InterruptedException {
         Thread.sleep(5000);
         if (app.getBoard().isOnBoardsPage()) {
@@ -14,7 +14,7 @@ public class ModifyBoards extends TestBase {
         if (app.getBoard().getBoardsCount() == 0) {
             app.getBoard().createBoard();
         }
-    }*/
+    }
 
 
     @Test

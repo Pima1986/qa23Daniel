@@ -60,8 +60,8 @@ public class GroupHelper extends HelperBase {
         wd.findElement(By.xpath("//input[@id='displayName']")).clear();
        /* waitForElementAndType(By.xpath("//input[@id='displayName'"),"New name from home " + random);
         waitForElementAndType(By.xpath("//textarea[@id='desc']"),"New Description for this field from home " + random);*/
-        type(By.xpath("//input[@id='displayName']"), "New name from home " + random);
-        type(By.xpath("//textarea[@id='desc']"), "New Description for this field from home " + random);
+        type(By.xpath("//input[@id='displayName']"), "Changed name " + random);
+        type(By.xpath("//textarea[@id='desc']"), "New Description for changed field from home " + random);
         click(By.cssSelector("[type='submit']"));
 
     }

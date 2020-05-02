@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.Date;
 import java.util.Random;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
@@ -15,7 +16,8 @@ public class BoardHelper extends HelperBase {
     }
 
     public void initBoardCreation() {
-        click(By.cssSelector("[name='add']"));
+        waitForElementAndClick(By.cssSelector("[name='add']"));
+        //click(By.cssSelector("[name='add']"));
         waitForElementAndClick(By.xpath("//div[@class='atlaskit-portal-container']//li[1]//button[1]"));
 
     }
@@ -24,7 +26,7 @@ public class BoardHelper extends HelperBase {
         int random = (int) (Math.random() * 100 + 1);
         new WebDriverWait(wd, 20).until(presenceOfElementLocated(By.
                 cssSelector("[data-test-id='create-board-title-input']"))).
-                sendKeys("New Board from Home" + random);
+                sendKeys("New Board from Home " + random);
         click(By.cssSelector(".W6rMLOx8U0MrPx"));
         click(By.xpath("//li[1]/button[@class = '_2jR0BZMM5cBReR']"));
 
@@ -65,27 +67,31 @@ public class BoardHelper extends HelperBase {
     public void createBoard() throws InterruptedException {
         initBoardCreation();
         fillBoardForm();
-        Thread.sleep(3000);
-        click(By.cssSelector("[data-test-id='create-board-submit-button']"));
+        waitForElementAndClick(By.cssSelector("[data-test-id='create-board-submit-button']"));
+        //click(By.cssSelector("[data-test-id='create-board-submit-button']"));
         returnHomePage();
     }
 
     public void createByTemplate() {
-        click(By.cssSelector("[class='icon-sm icon-template-card dark-background-hover']"));
+        waitForElementAndClick(By.cssSelector("[class='icon-sm icon-template-card dark-background-hover']"));
+        //click(By.cssSelector("[class='icon-sm icon-template-card dark-background-hover']"));
         waitForElementAndClick(By.cssSelector(".css-t5emrf"));
 
 
     }
 
     public void addCard() {
-        click(By.cssSelector(".js-save-edit"));
+        waitForElementAndClick(By.cssSelector(".js-save-edit"));
+        //click(By.cssSelector(".js-save-edit"));
     }
 
     public void fillNameOfList() throws InterruptedException {
-        Thread.sleep(2000);
+
         int random = (int) (Math.random() * 100 + 1);
-        type(By.cssSelector("[name='name']"),
+        waitForElementAndType(By.cssSelector("[name='name']"),
                 "New adding to list " + random);
+        /*type(By.cssSelector("[name='name']"),
+                "New adding to list " + random);*/
     }
 
     public void initAddList() {
