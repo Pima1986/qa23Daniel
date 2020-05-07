@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 public class ModifyBoards extends TestBase {
     @BeforeMethod
     public void ensurePreconditions() throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         if (app.getBoard().isOnBoardsPage()) {
             app.getBoard().click(By.cssSelector("[href$=boards]"));
         }

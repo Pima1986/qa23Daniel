@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.qa.trello.tests.tests.GroupDeletion" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-05-07T08:53:42" hostname="Daniel" time="11.242">
-  <properties/>
-  <testcase name="groupDeletion" classname="com.qa.trello.tests.tests.GroupDeletion" time="11.242"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[[1588841628.580][SEVERE]: Timed out receiving message from renderer: 0.100
-[1588841631.193][SEVERE]: Timed out receiving message from renderer: 0.100
-]]></system-err>
-</testsuite>

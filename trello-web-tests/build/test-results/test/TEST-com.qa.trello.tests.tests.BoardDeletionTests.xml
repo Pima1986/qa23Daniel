@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.qa.trello.tests.tests.BoardDeletionTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-05-07T08:52:47" hostname="Daniel" time="12.65">
+<testsuite name="com.qa.trello.tests.tests.BoardDeletionTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-05-07T09:42:00" hostname="Daniel" time="31.947">
   <properties/>
-  <testcase name="TestDeletion" classname="com.qa.trello.tests.tests.BoardDeletionTests" time="12.65"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[[1588841575.898][SEVERE]: Timed out receiving message from renderer: 0.100
-[1588841577.913][SEVERE]: Timed out receiving message from renderer: 0.100
-[1588841578.753][SEVERE]: Timed out receiving message from renderer: 0.100
+  <testcase name="TestDeletion" classname="com.qa.trello.tests.tests.BoardDeletionTests" time="31.947"/>
+  <system-out><![CDATA[was: 117  now: 116
+]]></system-out>
+  <system-err><![CDATA[[1588844501.707][SEVERE]: Timed out receiving message from renderer: 0.100
+[1588844501.815][SEVERE]: Timed out receiving message from renderer: 0.100
+[1588844501.919][SEVERE]: Timed out receiving message from renderer: 0.100
+[1588844502.021][SEVERE]: Timed out receiving message from renderer: 0.100
+[1588844502.127][SEVERE]: Timed out receiving message from renderer: 0.100
+[1588844502.232][SEVERE]: Timed out receiving message from renderer: 0.100
+[1588844502.334][SEVERE]: Timed out receiving message from renderer: 0.100
+[1588844502.595][SEVERE]: Timed out receiving message from renderer: 0.100
+[1588844539.714][SEVERE]: Timed out receiving message from renderer: 0.100
+[1588844542.886][SEVERE]: Timed out receiving message from renderer: 0.100
+[1588844543.713][SEVERE]: Timed out receiving message from renderer: 0.100
+[1588844544.911][SEVERE]: Timed out receiving message from renderer: 0.100
 ]]></system-err>
 </testsuite>

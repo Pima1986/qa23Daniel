@@ -10,7 +10,7 @@ public class BoardDeletionTests extends TestBase {
 
     @BeforeMethod
     public void ensurePreconditions() throws InterruptedException {
-       Thread.sleep(2000);
+        Thread.sleep(3000);
         if (app.getBoard().isOnBoardsPage()) {
             app.getBoard().click(By.cssSelector("[href$=boards"));
         }
@@ -22,7 +22,7 @@ public class BoardDeletionTests extends TestBase {
     @Test
     public void TestDeletion() throws InterruptedException {
 
-       /* int before = app.getBoard().getBoardsCount();*/
+        int before = app.getBoard().getBoardsCount();
         app.getBoard().openFirstPersonalBoard();
         app.getBoard().clickMoreButton();
         app.getBoard().initBoardDeletionInMeu();
@@ -30,9 +30,9 @@ public class BoardDeletionTests extends TestBase {
         app.getBoard().permanentlyDeleteBoard();
         app.getBoard().confirmDeleteBoard();
         app.getBoard().returnHomePage();
-       /* int after = app.getBoard().getBoardsCount();
+        int after = app.getBoard().getBoardsCount();
         System.out.println("was: " + before + "  now: " + after);
-        assertEquals(after, before - 1);*/
+        assertEquals(after, before - 1);
     }
 
 
