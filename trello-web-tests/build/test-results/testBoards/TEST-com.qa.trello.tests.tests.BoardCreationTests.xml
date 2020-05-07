@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.qa.trello.tests.tests.BoardCreationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-05-07T10:33:06" hostname="Daniel" time="36.943">
+<testsuite name="com.qa.trello.tests.tests.BoardCreationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-05-07T10:40:58" hostname="Daniel" time="40.071">
   <properties/>
-  <testcase name="testBoardCreation" classname="com.qa.trello.tests.tests.BoardCreationTests" time="36.943"/>
+  <testcase name="testBoardCreation" classname="com.qa.trello.tests.tests.BoardCreationTests" time="40.071"/>
   <system-out><![CDATA[was: 118  now: 119
 ]]></system-out>
-  <system-err><![CDATA[[1588847568.443][SEVERE]: Timed out receiving message from renderer: 0.100
-[1588847568.548][SEVERE]: Timed out receiving message from renderer: 0.100
-[1588847568.653][SEVERE]: Timed out receiving message from renderer: 0.100
-[1588847568.757][SEVERE]: Timed out receiving message from renderer: 0.100
-[1588847568.863][SEVERE]: Timed out receiving message from renderer: 0.100
-[1588847568.968][SEVERE]: Timed out receiving message from renderer: 0.100
-[1588847608.812][SEVERE]: Timed out receiving message from renderer: 0.100
-[1588847612.927][SEVERE]: Timed out receiving message from renderer: 0.100
-[1588847613.178][SEVERE]: Timed out receiving message from renderer: 0.100
+  <system-err><![CDATA[1588848074158	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1588848075364	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:244:13
+TimedPromise@chrome://marionette/content/sync.js:229:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
 ]]></system-err>
 </testsuite>

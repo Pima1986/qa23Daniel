@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.Date;
 import java.util.Random;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
@@ -19,7 +18,6 @@ public class BoardHelper extends HelperBase {
 
     public void initBoardCreation() {
         waitForElementAndClick(By.cssSelector("[name='add']"));
-        //click(By.cssSelector("[name='add']"));
         waitForElementAndClick(By.xpath("//div[@class='atlaskit-portal-container']//li[1]//button[1]"));
 
     }

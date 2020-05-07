@@ -27,7 +27,6 @@ public class SessionHelper extends HelperBase{
     }
 
 
-
     public void login(String email, String password) throws InterruptedException {
         initLogin();
         fillLoginFormAtlassian(email, password);

@@ -12,7 +12,6 @@ public class GroupHelper extends HelperBase {
         int random = (int) (Math.random() * 50 + 1);
         waitForElementAndType(By
                 .cssSelector("[data-test-id='header-create-team-name-input']"), "New QA group" + random);
-
         click(By.cssSelector(".css-3gw83x"));
         click(By.xpath("//div[@id='react-select-2-option-3']//li[@class='_38pq5NbRWAG39y']"));
         waitForElementAndType(By.cssSelector("._15aIJYNKhrO4vB"), "Generate random String of given size in Java" +
@@ -73,6 +72,6 @@ public class GroupHelper extends HelperBase {
     }
 
     public void returnToBoardsPageUrl(String username) {
-        wd.navigate().to("https://trello.com/"+username+"/boards");
+        wd.navigate().to("https://trello.com/" + username + "/boards");
     }
 }
