@@ -2,6 +2,8 @@ package com.qa.trello.tests.framework;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.Date;
@@ -50,6 +52,12 @@ public class BoardHelper extends HelperBase {
     }
 
     public void clickMoreButton() {
+        // openMenu();
+        WebElement moreButton = new WebDriverWait(wd, 30).
+                until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".js-open-more")));
+        if (!moreButton.isDisplayed()) {
+            wd.findElement(By.cssSelector(".board-header-btn.mod-show-menu.js-show-sidebar")).click();
+        }
         wd.findElement(By.cssSelector(".js-open-more")).click();
 
     }

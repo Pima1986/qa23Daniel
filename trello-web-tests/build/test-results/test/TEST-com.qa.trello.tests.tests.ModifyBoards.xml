@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.qa.trello.tests.tests.ModifyBoards" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-05-02T15:57:26" hostname="Daniel" time="23.639">
+<testsuite name="com.qa.trello.tests.tests.ModifyBoards" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-05-07T08:54:29" hostname="Daniel" time="25.158">
   <properties/>
-  <testcase name="ModifyTests" classname="com.qa.trello.tests.tests.ModifyBoards" time="23.639"/>
+  <testcase name="ModifyTests" classname="com.qa.trello.tests.tests.ModifyBoards" time="25.158"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[[1588435066.473][SEVERE]: Timed out receiving message from renderer: 0.100
+  <system-err><![CDATA[[1588841668.862][SEVERE]: Timed out receiving message from renderer: 0.100
 ]]></system-err>
 </testsuite>

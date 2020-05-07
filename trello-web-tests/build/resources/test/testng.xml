@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Regression" verbose="1" >
+    <test name="Boards" >
+        <classes>
+            <class name="com.qa.trello.tests.tests.BoardCreationTests" />
+            <class name="com.qa.trello.tests.tests.ModifyBoards" />
+            <class name="com.qa.trello.tests.tests.BoardDeletionTests" />
+        </classes>
+    </test>
+
+    <test name="Groups">
+        <classes>
+            <class name="com.qa.trello.tests.tests.GroupCreationTests"/>
+            <class name="com.qa.trello.tests.tests.GroupModificationsTests"/>
+            <class name="com.qa.trello.tests.tests.GroupDeletion"/>
+        </classes>
+    </test>
+</suite>
