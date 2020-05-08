@@ -6,6 +6,10 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -24,17 +28,17 @@ public class BoardCreationTests extends TestBase {
         }
     }
 
-   /* @DataProvider
-    public Iterator<Object[]> validBoards() throws IOException {
+    /*@DataProvider
+    public Iterator<Object[]> validBoards() throws IOException, IOException {
         List<Object> list = new ArrayList<>();
         BufferedReader reader = new BufferedReader(new FileReader(
                 new File("src/test/resources/boards.csv")));
         String line = reader.readLine();
 
         while (line != null) {
-            String line = line.readLine();
+            line = line.readLine();
             String[] split = line.split(";");
-            list.add(new Object[]{new Board().withName(split[0]).withName(split[1])});
+            list.add(new Object[]{new BoardData().withName(split[0]).withName(split[1])});
             reader.readLine();
         }
 
@@ -52,9 +56,9 @@ public class BoardCreationTests extends TestBase {
     }
 
     @Test(dataProvider = "validBoardEasy")
-    public void testBoardCreation(String name) throws InterruptedException {
+    public void testBoardCreation(String boardName) throws InterruptedException {
         Thread.sleep(3000);
-        BoardData board = new BoardData().withName(name);
+        BoardData board = new BoardData().withName(boardName);
         int before = app.getBoard().getBoardsCount();
         app.getBoard().initBoardCreation();
         app.getBoard().fillBoardForm(board);
