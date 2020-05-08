@@ -1,0 +1,4 @@
+30031 [Test worker] INFO  com.qa.trello.tests.tests.TestBase - Start test TestDeletion
+81182 [Test worker] INFO  com.qa.trello.tests.tests.TestBase - Stop test TestDeletion
+14:33:37.132 [Test worker] INFO  com.qa.trello.tests.tests.TestBase - Start test TestDeletion
+14:34:18.975 [Test worker] INFO  com.qa.trello.tests.tests.TestBase - Stop test TestDeletion
