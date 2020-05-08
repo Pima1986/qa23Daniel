@@ -1,5 +1,6 @@
 package com.qa.trello.tests.framework;
 
+import com.qa.trello.tests.model.BoardData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,15 +23,19 @@ public class BoardHelper extends HelperBase {
 
     }
 
-    public void fillBoardForm() {
-        int random = (int) (Math.random() * 100 + 1);
-        new WebDriverWait(wd, 20).until(presenceOfElementLocated(By.
-                cssSelector("[data-test-id='create-board-title-input']"))).
-                sendKeys("New Board from Home " + random);
+    public void fillBoardForm(BoardData boardData) {
+        typeBoardName(boardData.getName());
         click(By.cssSelector(".W6rMLOx8U0MrPx"));
         click(By.xpath("//li[1]/button[@class = '_2jR0BZMM5cBReR']"));
 
 
+    }
+
+    private void typeBoardName(String nameOfBoard) {
+        int random = (int) (Math.random() * 100 + 1);
+        new WebDriverWait(wd, 20).until(presenceOfElementLocated(By.
+                cssSelector("[data-test-id='create-board-title-input']"))).
+                sendKeys("New Board from Home " + random);
     }
 
     public void confirmDeleteBoard() {
@@ -70,17 +75,16 @@ public class BoardHelper extends HelperBase {
                 xpath("//*[@class='boards-page-board-section-list']/../..//li")).size() - 1;
     }
 
-    public void createBoard() throws InterruptedException {
+    public void createBoard() {
         initBoardCreation();
-        fillBoardForm();
+        fillBoardForm(new BoardData()
+                .withName("New Board from Home "));
         waitForElementAndClick(By.cssSelector("[data-test-id='create-board-submit-button']"));
-        //click(By.cssSelector("[data-test-id='create-board-submit-button']"));
         returnHomePage();
     }
 
     public void createByTemplate() {
         waitForElementAndClick(By.cssSelector("[class='icon-sm icon-template-card dark-background-hover']"));
-        //click(By.cssSelector("[class='icon-sm icon-template-card dark-background-hover']"));
         waitForElementAndClick(By.cssSelector(".css-t5emrf"));
 
 

@@ -1,5 +1,6 @@
 package com.qa.trello.tests.tests;
 
+import com.qa.trello.tests.model.BoardData;
 import org.openqa.selenium.By;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -23,7 +24,8 @@ public class BoardCreationTests extends TestBase {
         Thread.sleep(3000);
         int before = app.getBoard().getBoardsCount();
         app.getBoard().initBoardCreation();
-        app.getBoard().fillBoardForm();
+        app.getBoard().fillBoardForm(new BoardData()
+                .withName("New Board from Home "));
         app.getBoard().click(By.cssSelector("[data-test-id='create-board-submit-button']"));
         app.getBoard().returnHomePage();
         int after = app.getBoard().getBoardsCount();
