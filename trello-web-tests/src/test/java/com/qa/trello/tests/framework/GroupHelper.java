@@ -10,7 +10,7 @@ public class GroupHelper extends HelperBase {
     }
 
     public void fillGroupForm(GroupData groupData) {
-        typeGroupName(groupData.getNameOfGroup());
+        typeGroupName(groupData.getName());
         click(By.cssSelector(".css-3gw83x"));
         typeOfGroup(groupData.getType());
         descriptions(groupData.getDescriptions());
@@ -21,8 +21,9 @@ public class GroupHelper extends HelperBase {
     }
 
     private void descriptions(String text) {
-        waitForElementAndType(By.cssSelector("._15aIJYNKhrO4vB"), "Generate random String of given size in Java" +
-                "Given a size as n, The task is to generate a random alphanumeric String of this size.");
+        text = "Generate random String of given size in Java" +
+                "Given a size as n, The task is to generate a random alphanumeric String of this size.";
+        waitForElementAndType(By.cssSelector("._15aIJYNKhrO4vB"), text);
     }
 
     private void typeOfGroup(String type) {

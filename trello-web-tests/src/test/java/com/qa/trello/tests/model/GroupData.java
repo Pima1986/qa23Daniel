@@ -20,7 +20,7 @@ public class GroupData {
         return this;
     }
 
-    public String getNameOfGroup() {
+    public String getName() {
         return name;
     }
 
