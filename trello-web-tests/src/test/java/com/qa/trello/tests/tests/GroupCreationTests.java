@@ -1,13 +1,40 @@
 package com.qa.trello.tests.tests;
 
+import com.qa.trello.tests.model.BoardData;
 import com.qa.trello.tests.model.GroupData;
 import org.openqa.selenium.By;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 public class GroupCreationTests extends TestBase {
 
-    @Test
-    public void testGroupCreation(){
+    @DataProvider
+    public Iterator<Object[]> validGroups() throws IOException, InterruptedException {
+        List<Object[]> list = new ArrayList<>();
+        BufferedReader reader = new BufferedReader(new FileReader(new File("src/resources/groups.csv")));
+        String line = reader.readLine();
+        while (line != null) {
+            String[] split = line.split(";");
+            list.add(new Object[]{new GroupData()
+                    .withName(split[0])
+                    .withType(split[2])
+                    .withDescriptions(split[3])});
+            reader.readLine();
+        }
+
+        return list.iterator();
+    }
+
+    @Test (dataProvider = "validGroups")
+    public void testGroupCreation() {
         app.getGroup().initGroupCreation();
         app.getGroup().fillGroupForm(new GroupData()
                 .withName("New QA group ")

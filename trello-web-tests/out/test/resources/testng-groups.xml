@@ -6,6 +6,7 @@
             <class name="com.qa.trello.tests.tests.GroupCreationTests"/>
             <class name="com.qa.trello.tests.tests.GroupModificationsTests"/>
             <class name="com.qa.trello.tests.tests.GroupDeletion"/>
+
         </classes>
     </test>
 </suite>
