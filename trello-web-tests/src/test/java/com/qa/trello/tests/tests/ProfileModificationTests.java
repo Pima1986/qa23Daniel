@@ -6,12 +6,12 @@ public class ProfileModificationTests extends TestBase {
 
 
     @Test
-    public void testChangeProfile(){
-       app.getProfile().clickOnAvatar();
-       app.getProfile().selectProfileAndVisibiliy();
+    public void testChangeProfile() throws InterruptedException {
+        app.getProfile().clickOnAvatar();
+        app.getProfile().selectProfileAndVisibiliy();
         app.getProfile().goToAtlassianProfile();
         app.getProfile().initChangeProfilePhoto();
-       // app.getProfile().upLoadPhoto();
+        app.getProfile().upLoadPhoto();
     }
 
 

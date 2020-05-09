@@ -1,0 +1,2 @@
+20:47:14.240 [main] INFO  com.qa.trello.tests.tests.TestBase - Start test testChangeProfile with parameters: []
+20:47:51.923 [main] INFO  com.qa.trello.tests.tests.TestBase - Stop test testChangeProfile
