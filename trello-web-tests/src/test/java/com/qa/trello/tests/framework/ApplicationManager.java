@@ -16,6 +16,7 @@ public class ApplicationManager {
     SessionHelper session;
     private WebDriverWait wait;
     String browser;
+    ProfileHelper profile;
 
     public ApplicationManager(String browser) {
         this.browser = browser;
@@ -43,6 +44,7 @@ public class ApplicationManager {
 
         board = new BoardHelper(wd);
         group = new GroupHelper(wd);
+        profile = new ProfileHelper(wd);
 
     }
 
@@ -52,6 +54,9 @@ public class ApplicationManager {
         wd.quit();
     }
 
+    public ProfileHelper getProfile() {
+        return profile;
+    }
 
     public BoardHelper getBoard() {
         return board;
