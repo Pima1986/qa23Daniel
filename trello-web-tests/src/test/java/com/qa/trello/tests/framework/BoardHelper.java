@@ -31,11 +31,11 @@ public class BoardHelper extends HelperBase {
 
     }
 
-    private void typeBoardName(String nameOfBoard) {
+    private void typeBoardName(String nameofBoard) {
         int random = (int) (Math.random() * 100 + 1);
         new WebDriverWait(wd, 20).until(presenceOfElementLocated(By.
                 cssSelector("[data-test-id='create-board-title-input']"))).
-                sendKeys("New Board from Home " + random);
+                sendKeys( "New Board from Home " + random);
     }
 
     public void confirmDeleteBoard() {

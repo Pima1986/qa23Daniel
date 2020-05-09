@@ -1,0 +1,6 @@
+13:28:07.389 [Test worker] INFO  com.qa.trello.tests.tests.TestBase - Start test testBoardCreation with parameters: [hhhhh]
+13:28:55.161 [Test worker] INFO  com.qa.trello.tests.tests.TestBase - Stop test testBoardCreation
+13:28:55.164 [Test worker] INFO  com.qa.trello.tests.tests.TestBase - Start test testBoardCreation with parameters: [1111111]
+13:29:21.623 [Test worker] INFO  com.qa.trello.tests.tests.TestBase - Stop test testBoardCreation
+13:29:21.628 [Test worker] INFO  com.qa.trello.tests.tests.TestBase - Start test testBoardCreation with parameters: [dfghjkl;trehwjklfdfoklmsd,cx]
+13:29:47.491 [Test worker] INFO  com.qa.trello.tests.tests.TestBase - Stop test testBoardCreation
