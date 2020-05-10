@@ -43,7 +43,7 @@ public class GroupHelper extends HelperBase {
     }
 
     public void initGroupCreation() {
-        click(By.cssSelector("[name='add']"));
+        waitForElementAndClick(By.cssSelector("[name='add']"));
         waitForElementAndClick(By.
                 xpath("//li[2]//button[1]//p[1]"));
     }

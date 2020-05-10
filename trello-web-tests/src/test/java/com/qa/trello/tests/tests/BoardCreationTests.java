@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+
 import static org.testng.AssertJUnit.assertEquals;
 
 public class BoardCreationTests extends TestBase {
@@ -31,13 +32,14 @@ public class BoardCreationTests extends TestBase {
     @DataProvider
     public Iterator<Object[]> validBoards() throws IOException {
         List<Object[]> list = new ArrayList<>();
-        BufferedReader reader = new BufferedReader(new FileReader(
-                new File("src/test/resources/boards.csv")));
+        BufferedReader reader = new BufferedReader(
+                new FileReader(new File(
+                        "src/test/resources/boards.csv")));
         String line = reader.readLine();
         while (line != null) {
             String[] split = line.split(";");
             list.add(new Object[]{new BoardData().withName(split[0])});
-            reader.readLine();
+            line = reader.readLine();
         }
 
         return list.iterator();
@@ -63,7 +65,7 @@ public class BoardCreationTests extends TestBase {
         app.getBoard().returnHomePage();
         int after = app.getBoard().getBoardsCount();
         System.out.println("was: " + before + "  now: " + after);
-        assertEquals(after, before +1);
+        assertEquals(after, before + 1);
 
 
     }
