@@ -10,15 +10,16 @@ public class GroupHelper extends HelperBase {
     }
 
     public void fillGroupForm(GroupData groupData) {
-        fillGroupForm(new GroupData()
-                .withName("New QA group ")
+        fillGroupForm(
+                new GroupData()
+                .withName("New QA  ")
                 .withType("//div[@id='react-select-2-option-3']//li[@class='_38pq5NbRWAG39y']")
                 .withDescriptions("Generate random String of given size in Java" +
                         "Given a size as n, The task is to generate a random alphanumeric String of this size."));
-        typeGroupName(groupData.getName());
+        /*typeGroupName(groupData.getName());
         click(By.cssSelector(".css-3gw83x"));
         typeOfGroup(groupData.getType());
-        descriptions(groupData.getDescriptions());
+        descriptions(groupData.getDescriptions());*/
 
         click(By.cssSelector("[data-test-id='header-create-team-submit-button']"));
 
