@@ -34,13 +34,10 @@ public class GroupCreationTests extends TestBase {
     }
 
     @Test(dataProvider = "validGroups")
-    public void testGroupCreation() {
+    public void testGroupCreation(GroupData groupData) throws InterruptedException {
+        Thread.sleep(2000);
         app.getGroup().initGroupCreation();
-        app.getGroup().fillGroupForm(new GroupData()
-                .withName("New QA group ")
-                .withType("//div[@id='react-select-2-option-3']//li[@class='_38pq5NbRWAG39y']")
-                .withDescriptions("Generate random String of given size in Java" +
-                        "Given a size as n, The task is to generate a random alphanumeric String of this size."));
+        app.getGroup().fillGroupForm(groupData);
         app.getGroup().click(By.cssSelector("[data-test-id='header-create-team-submit-button']"));
         app.getGroup().inviteGroupLater();
         app.getGroup().returnHomePage();
