@@ -43,6 +43,7 @@ public class ProfileHelper extends HelperBase {
         //prosto navodim na element, no ne klikaem
         new Actions(wd).moveToElement(avatar).perform();
         click(By.cssSelector("[data-test-selector='trigger-avatar-picker']"));
+
     }
 
     public void upLoadPhoto() throws InterruptedException {
@@ -50,7 +51,7 @@ public class ProfileHelper extends HelperBase {
                 new File("C:\\Users\\Daniel\\Documents\\GitHub\\qa23Daniel\\trello-web-tests\\src\\test\\resources\\NY2019.png"));
         Thread.sleep(2000);
         click(By.xpath("//*[contains(text(), 'Загрузить')]"));
-
+        Thread.sleep(2000);
         returnHomePage();
     }
 
