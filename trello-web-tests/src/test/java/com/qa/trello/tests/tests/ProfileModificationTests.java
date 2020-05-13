@@ -14,6 +14,8 @@ public class ProfileModificationTests extends TestBase {
         app.getProfile().initChangeProfilePhoto();
         app.getProfile().upLoadPhoto();
         app.getProfile().takeScreenshot();
+        app.getProfile().returnToTrello();
+        app.getProfile().refreshPage();
     }
 
 

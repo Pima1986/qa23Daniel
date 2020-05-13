@@ -64,4 +64,8 @@ public class HelperBase {
             e.printStackTrace();
         }
     }
+
+    public void refreshPage() {
+        wd.navigate().refresh();
+    }
 }

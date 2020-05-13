@@ -58,4 +58,12 @@ public class ProfileHelper extends HelperBase {
     public void attachFile(By locator, File file) {
         wd.findElement(locator).sendKeys(file.getAbsolutePath());
     }
+
+    public void returnToTrello() {
+        wd.close();
+        List<String> availableWindows = new ArrayList<>(wd.getWindowHandles());
+        if (!availableWindows.isEmpty()) {
+            wd.switchTo().window(availableWindows.get(0));
+        }
+    }
 }
