@@ -18,9 +18,6 @@ dependencies {
 
  test{
     useTestNG()
-     if (project.hasProperty('target')) {
-         systemProperty 'target', "${browser}"
-     }
 }
 
 test {
