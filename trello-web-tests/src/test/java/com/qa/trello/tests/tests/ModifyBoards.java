@@ -29,6 +29,7 @@ public class ModifyBoards extends TestBase {
         app.getBoard().addTemplate();
         app.getBoard().templateForCards();
         app.getBoard().returnHomePage();
+        System.out.println("sljfjdkfnl");
 
 
     }
