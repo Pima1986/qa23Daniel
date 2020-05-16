@@ -18,6 +18,9 @@ dependencies {
 
  test{
     useTestNG()
+     if (project.hasProperty('target')) {
+         systemProperty 'target', "${browser}"
+     }
 }
 
 test {
@@ -27,6 +30,9 @@ test {
     }
     if (project.hasProperty('browser')) {
         systemProperty 'browser', "${browser}"
+    }
+    if (project.hasProperty('target')) {
+        systemProperty 'target', "${browser}"
     }
 }
 
@@ -38,6 +44,9 @@ task testBoards(type: Test) {
     if (project.hasProperty('browser')) {
         systemProperty 'browser', "${browser}"
     }
+    if (project.hasProperty('target')) {
+        systemProperty 'target', "${browser}"
+    }
 }
 task testGroup(type: Test) {
     useTestNG {
@@ -46,6 +55,9 @@ task testGroup(type: Test) {
     }
     if (project.hasProperty('browser')) {
         systemProperty 'browser', "${browser}"
+    }
+    if (project.hasProperty('target')) {
+        systemProperty 'target', "${browser}"
     }
 }
 

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.qa.trello.tests.tests.ModifyBoards" tests="1" skipped="1" failures="0" errors="0" timestamp="2020-05-16T12:48:45" hostname="Daniel" time="0.0">
+  <properties/>
+  <testcase name="ModifyTests" classname="com.qa.trello.tests.tests.ModifyBoards" time="0.0">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

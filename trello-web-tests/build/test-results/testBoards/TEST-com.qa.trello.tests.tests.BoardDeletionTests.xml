@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.qa.trello.tests.tests.BoardDeletionTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-05-08T11:43:07" hostname="Daniel" time="16.449">
+<testsuite name="com.qa.trello.tests.tests.BoardDeletionTests" tests="1" skipped="1" failures="0" errors="0" timestamp="2020-05-16T12:48:45" hostname="Daniel" time="0.0">
   <properties/>
-  <testcase name="TestDeletion" classname="com.qa.trello.tests.tests.BoardDeletionTests" time="16.449"/>
-  <system-out><![CDATA[14:42:44.042 [Test worker] INFO  com.qa.trello.tests.tests.TestBase - Start test TestDeletion
-14:43:24.350 [Test worker] INFO  com.qa.trello.tests.tests.TestBase - Stop test TestDeletion
-]]></system-out>
-  <system-err><![CDATA[[1588938167.218][SEVERE]: Timed out receiving message from renderer: 0.100
-]]></system-err>
+  <testcase name="TestDeletion" classname="com.qa.trello.tests.tests.BoardDeletionTests" time="0.0">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
 </testsuite>
